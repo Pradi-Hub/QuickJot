@@ -1,6 +1,5 @@
 package com.example.quickjot.database
 
-import android.provider.ContactsContract.CommonDataKinds.Note
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
@@ -8,17 +7,18 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
+import com.example.quickjot.model.Note
 
 @Dao
 interface NoteDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertNote(note: Note)
+    suspend fun insertNote(note: com.example.quickjot.model.Note)
 
     @Update
-    suspend fun updateNote(note: Note)
+    suspend fun updateNote(note: com.example.quickjot.model.Note)
 
     @Delete
-    suspend fun deleteNote(note: Note)
+    suspend fun deleteNote(note: com.example.quickjot.model.Note)
 
     @Query("SELECT * FROM NOTES ORDER BY id DESC")
     fun getAllNotes(): LiveData<List<Note>>
