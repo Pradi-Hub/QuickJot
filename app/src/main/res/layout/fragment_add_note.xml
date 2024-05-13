@@ -9,7 +9,8 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:context=".NewNoteFragment"
-        android:padding="12dp">
+        android:padding="12dp"
+        android:background="@color/green">
 
         <TextView
             android:id="@+id/addNoteHeading"
@@ -17,9 +18,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_marginTop="16dp"
-            android:fontFamily="@font/handlee"
+            android:fontFamily="@font/poppins_bold"
             android:text="Add Note."
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textSize="24sp"
             android:textStyle="bold" />
 
@@ -29,12 +30,14 @@
             android:layout_height="60dp"
             android:hint="Enter the title"
             android:padding="12dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:textSize="20sp"
             android:layout_below="@id/addNoteHeading"
-            android:background="@drawable/green_border"
+            android:background="@drawable/orange_border"
             android:layout_marginTop="16dp"
             android:maxLines="1"
-            android:fontFamily="@font/handlee"/>
+            android:fontFamily="@font/poppins_medium"/>
 
         <EditText
             android:id="@+id/addNoteDesc"
@@ -42,10 +45,12 @@
             android:layout_height="match_parent"
             android:hint="Enter the description"
             android:gravity="top"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:padding="12dp"
             android:textSize="18sp"
-            android:fontFamily="@font/handlee"
-            android:background="@drawable/green_border"
+            android:fontFamily="@font/poppins_medium"
+            android:background="@drawable/orange_border"
             android:layout_below="@id/addNoteTitle"
             android:layout_marginTop="12dp" />
 

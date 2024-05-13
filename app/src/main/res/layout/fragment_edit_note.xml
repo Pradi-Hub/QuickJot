@@ -9,7 +9,8 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="12dp"
-        tools:context=".UpdateNoteFragment">
+        tools:context=".UpdateNoteFragment"
+        android:background="@color/green">
 
         <TextView
             android:id="@+id/editNoteHeading"
@@ -17,24 +18,26 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_marginTop="16dp"
-            android:fontFamily="@font/handlee"
+            android:fontFamily="@font/poppins_bold"
             android:text="Edit Note."
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:textSize="24sp" />
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/editNoteTitle"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:hint="Enter the title"
+            android:textColorHint="@color/white"
             android:padding="12dp"
             android:textSize="20sp"
+            android:textColor="@color/white"
             android:layout_below="@id/editNoteHeading"
-            android:background="@drawable/green_border"
+            android:background="@drawable/orange_border"
             android:layout_marginTop="16dp"
             android:maxLines="1"
-            android:fontFamily="@font/handlee"/>
+            android:fontFamily="@font/poppins_medium"/>
 
         <EditText
             android:id="@+id/editNoteDesc"
@@ -42,10 +45,12 @@
             android:layout_height="match_parent"
             android:hint="Enter the description"
             android:gravity="top"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:padding="12dp"
             android:textSize="18sp"
-            android:fontFamily="@font/handlee"
-            android:background="@drawable/green_border"
+            android:fontFamily="@font/poppins_medium"
+            android:background="@drawable/orange_border"
             android:layout_below="@id/editNoteTitle"
             android:layout_marginTop="12dp" />
 
@@ -53,15 +58,14 @@
             android:id="@+id/editNoteFab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"
-            android:clickable="true"
-            android:backgroundTint="@color/orange"
-            android:tintMode="@color/white"
-            android:src="@drawable/done"
-            android:layout_alignParentBottom="true"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:contentDescription="editFab" />
+            android:layout_marginStart="20dp"
+            android:backgroundTint="@color/orange"
+            android:clickable="true"
+            android:contentDescription="editFab"
+            android:src="@drawable/done"
+            android:tintMode="@color/white" />
 
     </RelativeLayout>
 </layout>
