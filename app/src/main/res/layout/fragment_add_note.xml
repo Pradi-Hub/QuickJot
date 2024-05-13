@@ -19,7 +19,7 @@
             android:layout_alignParentTop="true"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/poppins_bold"
-            android:text="Add Note."
+            android:text="Add Note"
             android:textColor="@color/white"
             android:textSize="24sp"
             android:textStyle="bold" />

@@ -5,6 +5,14 @@
     app:startDestination="@id/homeFragment">
 
     <fragment
+        android:id="@+id/addNoteFragment"
+        android:name="com.example.quickjot.fragments.AddNoteFragment"
+        android:label="AddNoteFragment" >
+        <action
+            android:id="@+id/action_addNoteFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.quickjot.fragments.HomeFragment"
         android:label="HomeFragment" >
@@ -14,14 +22,6 @@
         <action
             android:id="@+id/action_homeFragment_to_editNoteFragment"
             app:destination="@id/editNoteFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/addNoteFragment"
-        android:name="com.example.quickjot.fragments.AddNoteFragment"
-        android:label="AddNoteFragment" >
-        <action
-            android:id="@+id/action_addNoteFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/editNoteFragment"

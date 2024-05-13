@@ -25,7 +25,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), SearchView.OnQueryTextLis
     private var homeBinding: FragmentHomeBinding? = null
     private val binding get() = homeBinding!!
 
-    private lateinit var notesViewModel : NoteViewModel
+    private lateinit var noteViewModel : NoteViewModel
     private lateinit var noteAdapter: NoteAdapter
 
     override fun onCreateView(
@@ -43,7 +43,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), SearchView.OnQueryTextLis
         val menuHost: MenuHost = requireActivity()
         menuHost.addMenuProvider(this, viewLifecycleOwner,Lifecycle.State.RESUMED)
 
-        notesViewModel = (activity as MainActivity).noteViewModel
+        noteViewModel = (activity as MainActivity).noteViewModel
         setupHomeRecyclerView()
 
         binding.addNoteFab.setOnClickListener{
@@ -72,17 +72,17 @@ class HomeFragment : Fragment(R.layout.fragment_home), SearchView.OnQueryTextLis
         }
 
         activity?.let {
-            notesViewModel.getAllNotes().observe(viewLifecycleOwner) {note ->
+            noteViewModel.getAllNotes().observe(viewLifecycleOwner) {note ->
                 noteAdapter.differ.submitList(note)
                 updateUI(note)
             }
         }
     }
 
-    private fun searchNote(query: String?){
-        val searchQuery = "%$query"
+    private fun searchNote(query: String){
+        val searchQuery = "%$query%"
 
-        notesViewModel.searchNote(searchQuery).observe(this){list ->
+        noteViewModel.searchNote(searchQuery).observe(this){list ->
             noteAdapter.differ.submitList(list)
         }
     }
